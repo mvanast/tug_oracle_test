@@ -11,6 +11,8 @@ if __name__ == "__main__":
     Uses python 3, could easily be changed to older version (change print statement, maybe something else)
     '''
     print('testing oracle conn...')
+    dt_end = None
+    dt_start = None
     try:     
         #Connection string format: dbuser/password:dns_or_ip:port/DB (eg. my_user/my_nice_passwd:x.x.x.x:1521/my_db_name)
         connect_info = os.getenv('tug_oracle_db')
@@ -42,4 +44,10 @@ if __name__ == "__main__":
     except Exception as e:
         logging.exception(e)      
     finally:
+        if dt_end == None:
+            # connection time or issue
+            dt_end = datetime.now()
+            #determine the time delta from start to finish
+            delta = (dt_end - dt_start).total_seconds()
+            print("\n\n................Oracle ISSUE ENCOUNTERED... total time: " + str(delta) + " seconds\n\n")
         print('ending conn test')
