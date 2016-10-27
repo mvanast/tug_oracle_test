@@ -47,6 +47,11 @@ helpful reference: http://stackoverflow.com/questions/11245985/easy-install-cx-o
 	2.	sudo ln -s libocci.so.12.1 libocci.so
 	3.	sudo ln -s libslntshcore.so.12.1 libclntshcore.so
 
+## Script environment variables
+
+    1.  setup the connection string in tug_oracle_db: Connection string format: dbuser/password:dns_or_ip:port/DB (eg. my_user/my_nice_passwd:x.x.x.x:1521/my_db_name)
+    2.  setup the sql select statement in tug_oracle_sql:
+
 ## Python3 and Virtualenv 
 
 Some general helpful linux python3 setup (again this script could easily be converted to python 2.7)

@@ -13,9 +13,9 @@ if __name__ == "__main__":
     print('testing oracle conn...')
     try:     
         #Connection string format: dbuser/password:dns_or_ip:port/DB (eg. my_user/my_nice_passwd:x.x.x.x:1521/my_db_name)
-        connect_info = os.getenv('tug_voyagerdb')
+        connect_info = os.getenv('tug_oracle_db')
         dt_start = datetime.now()   
-        assert connect_info != None, 'Connection environment variable not set: tug_voyagerdb'
+        assert connect_info != None, 'Connection environment variable not set: tug_oracle_db'
 
         con = cx_Oracle.connect(connect_info)
         cur = con.cursor()
