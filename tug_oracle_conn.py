@@ -3,6 +3,7 @@ import cx_Oracle
 import logging
 from datetime import datetime
 
+
 if __name__ == "__main__":
     '''
     Just a little script to quickly test a connection to an Oracle DB.
@@ -14,6 +15,8 @@ if __name__ == "__main__":
         #Connection string format: dbuser/password:dns_or_ip:port/DB (eg. my_user/my_nice_passwd:x.x.x.x:1521/my_db_name)
         connect_info = os.getenv('tug_voyagerdb')
         dt_start = datetime.now()   
+        assert connect_info != None, 'Connection environment variable not set: tug_voyagerdb'
+
         con = cx_Oracle.connect(connect_info)
         cur = con.cursor()
 
@@ -22,6 +25,7 @@ if __name__ == "__main__":
         cur.arraysize = 10
 
         location_sql =  os.getenv('tug_oracle_sql')
+        assert location_sql != None, 'sql statement environment variable not set: tug_oracle_sql'
         cur.execute(location_sql)
         row_list = cur.fetchmany()
         dt_end = datetime.now()
