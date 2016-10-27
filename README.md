@@ -20,7 +20,9 @@ helpful reference: http://stackoverflow.com/questions/11245985/easy-install-cx-o
 1.  Go to the Oracle instant client site: http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html.
 2.  Download the rpms (zips for non linux) for your platform, and move to an oracle location to install (eg /usr/local/oracle).
 
-	* A free Oracle account / login will need  to be created.
+	*	A free Oracle account / login will need  to be created.
+	*	Install the 'basic' package first, and don't not use the 'basic-lite', although it
+		states its only language packs, other packages won't install if basic-lite was used
 
 3.  I found the linux rpms much easier to use than source install.
 
