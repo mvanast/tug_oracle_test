@@ -209,3 +209,5 @@ paket-files/
 /env
 tug_oracle_test.pyproj
 tug_oracle_test.sln
+tug_connect_graph_data.csv
+tug_coonect_graph_data.csv
