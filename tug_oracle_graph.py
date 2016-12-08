@@ -14,7 +14,8 @@ if __name__ == "__main__":
     dt_end = None
     dt_start = None
     try:
-        fname = 'tug_connect_graph_data.csv'
+        fpath = os.getenv('tug_oracle_graph_path')
+        fname = ''.join([fpath,'tug_connect_graph_data.csv'])
         headers = ''
         if not os.path.isfile(fname):
             headers = 'Start Date, Execution Time, Outcome\n'
